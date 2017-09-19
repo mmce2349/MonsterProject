@@ -28,8 +28,50 @@ public class MonsterController {
 		System.out.println("How many do you want to eat?");
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = myScanner.nextInt();
-		currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
-		System.out.println("Ok, now " + currentMonster.getName() + " has " + currentMonster.getArmCount() + " arms left.");
+		
+		if(consumed<0)
+		{
+			System.out.println("You cannot eat a negative amount silly human");
+			consumed = 0;
+		}
+		else if (consumed == 0)
+		{
+			System.out.println("Not that hungry are you?");
+		}
+		else if (consumed > currentMonster.getArmCount())
+		{
+			System.out.println("That is impossblie - I only have " + currentMonster.getArmCount() + " arms!!!");
+		}
+		else 
+		{
+			currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
+			System.out.println("Thank you so much! I only have this many now: " + currentMonster.getArmCount());
+			
+		}
+		
+		System.out.println(currentMonster.getName() + " wants to know what to eat next");
+		System.out.println("He suggests eyes next.");
+		System.out.println("How many eyes do you wanna eat?");
+		Scanner my1Scanner = new Scanner(System.in);
+		consumed = my1Scanner.nextInt();
+		
+		
+	
+		 if (consumed < 0)
+		{
+			System.out.println("You can't eat a negative number");
+		}
+		 else if (consumed > currentMonster.getEyeCount())
+			{
+				System.out.println("Silly, You can't eat more eyes than I have!");
+			}
+		else if (consumed < currentMonster.getEyeCount()) 
+		{
+			currentMonster.setEyeCount(currentMonster.getEyeCount()- consumed);
+			System.out.println("Awesome, Now I only have " + currentMonster.getEyeCount());
+			
+		}
+		
 		
 	}
 }
