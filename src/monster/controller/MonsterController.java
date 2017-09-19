@@ -79,6 +79,7 @@ public class MonsterController
 			
 		}
 		
+		 popup.displayText("Hey look at me!!!");
 		
 	}
 }
