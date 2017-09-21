@@ -33,13 +33,19 @@ public class MonsterController
 	}
 	
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
+
 	{
 //		System.out.println(currentMonster.getName() + " wants to know what to eat next");
 		popup.displayText(currentMonster.getName() + " wants to know what to eat next");
 //		System.out.println(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
 		popup.displayText(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
 //		System.out.println("How many do you want to eat?");
-		popup.getResponse("How many do you want to eat?");
+		
+		int specialAnswer;
+		String unconverted = popup.getResponse("How many do you want to eat?");
+		specialAnswer= Integer.parseInt(unconverted);
+		
+		
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = myScanner.nextInt();
 		
@@ -56,8 +62,8 @@ public class MonsterController
 		}
 		else if (consumed > currentMonster.getArmCount())
 		{
-//			System.out.println("That is impossblie - I only have " + currentMonster.getArmCount() + " arms!!!");
-			popup.displayText("That is impossblie - I only have " + currentMonster.getArmCount() + " arms!!!");
+//			System.out.println("That is impossible - I only have " + currentMonster.getArmCount() + " arms!!!");
+			popup.displayText("That is impossible - I only have " + currentMonster.getArmCount() + " arms!!!");
 		}
 		else 
 		{
@@ -100,5 +106,21 @@ public class MonsterController
 		String answer = popup.getResponse("How many meals are you eating today");
 		System.out.println(answer);
 		popup.displayText(answer);
+	}
+	//Helper Method
+	private boolean isValidInteger(String sample)
+	{
+		boolean valid= false;
+		
+		try
+		{
+			Integer.parseInt(sample);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("Only integer values are valid: " + sample + " is not");
+		}
+		return valid;
 	}
 }
