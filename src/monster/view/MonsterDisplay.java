@@ -9,11 +9,11 @@ public class MonsterDisplay
 	{
 		JOptionPane.showMessageDialog(null, testToDisplay);
 	}
-	public String getResponse(String testToDisplay)
+	public String getResponse(String questionAsked)
 	{
 		String response = "";
 		
-		response += JOptionPane.showInputDialog(null, testToDisplay);
+		response += JOptionPane.showInputDialog(null, questionAsked);
 		
 		return response;
 	}
