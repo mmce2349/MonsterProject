@@ -144,4 +144,19 @@ public class MonsterController
 		}
 		return valid;
 	}
+	private boolean isValidBoolean(String sampleBoolean)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Boolean.parseBoolean(sampleBoolean);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("Only boolean values are valid: " + sampleBoolean + " is not.");
+		}
+		return valid;
+	}
 }
