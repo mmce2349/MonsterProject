@@ -154,7 +154,7 @@ private boolean isValidBoolean(String sampleBoolean)
 			Boolean.parseBoolean(sampleBoolean);
 			valid = true;
 		}
-		catch(NumberFormatException error)
+		catch(NumberFormatException error)// catches the program from failure
 		{
 			popup.displayText("Only boolean values are valid: " + sampleBoolean + " is not.");
 		}
