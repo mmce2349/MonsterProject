@@ -40,7 +40,7 @@ public class MonsterController
 //		System.out.println(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
 		popup.displayText(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
 //		System.out.println("How many do you want to eat?");
-		int specialAnswer;
+		int specialAnswer = 0;
 		String unconverted = popup.getResponse("How many do you want to eat?");
 		
 		if(isValidInteger(unconverted))
@@ -51,13 +51,12 @@ public class MonsterController
 		
 		
 		Scanner myScanner = new Scanner(System.in);
-		int consumed = myScanner.nextInt();
-		
+		int consumed = 0;
+		consumed = specialAnswer;
 		if(consumed<0)
 		{
 //			System.out.println("You cannot eat a negative amount silly human");
 			popup.displayText("You cannot eat a negative amount silly human");
-			consumed = 0;
 		}
 		else if (consumed == 0)
 		{
@@ -113,6 +112,7 @@ public class MonsterController
 	}
 	//Helper Method
 	private boolean isValidInteger(String sample)
+
 	{
 		boolean valid= false;
 		
@@ -128,7 +128,7 @@ public class MonsterController
 		return valid;
 	}
 	
-	private boolean isValidDouble(String sampleDouble)
+private boolean isValidDouble(String sampleDouble)
 	{
 		boolean valid = false;
 		
@@ -144,7 +144,8 @@ public class MonsterController
 		}
 		return valid;
 	}
-	private boolean isValidBoolean(String sampleBoolean)
+	
+private boolean isValidBoolean(String sampleBoolean)
 	{
 		boolean valid = false;
 		
