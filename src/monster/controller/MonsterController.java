@@ -27,41 +27,52 @@ public class MonsterController
 			realMonster.setTentacleAmount(1);
 //			System.out.println(realMonster);
 			popup.displayText(realMonster.toString());
+			
 			interactWithTheMonster(realMonster);
 			
 	}
 	
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
 	{
-		System.out.println(currentMonster.getName() + " wants to know what to eat next");
-		System.out.println(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
-		System.out.println("How many do you want to eat?");
+//		System.out.println(currentMonster.getName() + " wants to know what to eat next");
+		popup.displayText(currentMonster.getName() + " wants to know what to eat next");
+//		System.out.println(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
+		popup.displayText(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
+//		System.out.println("How many do you want to eat?");
+		popup.getResponse("How many do you want to eat?");
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = myScanner.nextInt();
 		
 		if(consumed<0)
 		{
-			System.out.println("You cannot eat a negative amount silly human");
+//			System.out.println("You cannot eat a negative amount silly human");
+			popup.displayText("You cannot eat a negative amount silly human");
 			consumed = 0;
 		}
 		else if (consumed == 0)
 		{
-			System.out.println("Not that hungry are you?");
+//			System.out.println("Not that hungry are you?");
+			popup.displayText("Not that hungry are you?");
 		}
 		else if (consumed > currentMonster.getArmCount())
 		{
-			System.out.println("That is impossblie - I only have " + currentMonster.getArmCount() + " arms!!!");
+//			System.out.println("That is impossblie - I only have " + currentMonster.getArmCount() + " arms!!!");
+			popup.displayText("That is impossblie - I only have " + currentMonster.getArmCount() + " arms!!!");
 		}
 		else 
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
-			System.out.println("Thank you so much! I only have this many now: " + currentMonster.getArmCount());
+//			System.out.println("Thank you so much! I only have this many now: " + currentMonster.getArmCount());
+			popup.displayText("Thank you so much! I only have this many now: " + currentMonster.getArmCount());
 			
 		}
 		
-		System.out.println(currentMonster.getName() + " wants to know what to eat next");
-		System.out.println("He suggests eyes next.");
-		System.out.println("How many eyes do you wanna eat?");
+//		System.out.println(currentMonster.getName() + " wants to know what to eat next");
+		popup.displayText(currentMonster.getName() + " wants to know what to eat next");
+//		System.out.println("He suggests eyes next.");
+		popup.displayText("He suggests eyes next.");
+//		System.out.println("How many eyes do you wanna eat?");
+		popup.getResponse("How many eyes do you wanna eat?");
 		Scanner my1Scanner = new Scanner(System.in);
 		consumed = my1Scanner.nextInt();
 		
@@ -69,16 +80,19 @@ public class MonsterController
 	
 		 if (consumed < 0)
 		{
-			System.out.println("You can't eat a negative number");
+//			System.out.println("You can't eat a negative number");
+			popup.displayText("You can't eat a negative number");
 		}
 		 else if (consumed > currentMonster.getEyeCount())
 			{
-				System.out.println("Silly, You can't eat more eyes than I have!");
+//				System.out.println("Silly, You can't eat more eyes than I have!");
+				popup.displayText("Silly, You can't eat more eyes than I have!");
 			}
 		else if (consumed < currentMonster.getEyeCount()) 
 		{
 			currentMonster.setEyeCount(currentMonster.getEyeCount()- consumed);
-			System.out.println("Awesome, Now I only have " + currentMonster.getEyeCount());
+//			System.out.println("Awesome, Now I only have " + currentMonster.getEyeCount());
+			popup.displayText("Awesome, Now I only have " + currentMonster.getEyeCount());
 			
 		}
 		
