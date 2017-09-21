@@ -8,11 +8,11 @@ public class MarshmallowMonster
 	private int armCount;
 	private double tentacleAmount;
 	private boolean hasBloop;
-	
+	//this was the creation of data member(objects) so that we can store values in them. 
 	public MarshmallowMonster()
 	{
 		//Unless specified values, all date members are a zero, false, or null. 
-		
+		//nothing changes
 	}
 	
 	public MarshmallowMonster(String name, int eyeCount, int arms, double tentacleCount, boolean hasBloop)
@@ -22,8 +22,9 @@ public class MarshmallowMonster
 		this.armCount = arms;
 		this.tentacleAmount = tentacleCount;
 		this.hasBloop = hasBloop;
+		//allows this values to change and be interacted with
 	}
-	
+	// this helps retrieve certain values.
 	public String getName()
 	{
 		return name;
@@ -74,7 +75,7 @@ public class MarshmallowMonster
 	{
 		this.hasBloop = hasBloop;
 	}
-	
+	//this sets new values
 	
 	public String toString()
 	{
@@ -83,5 +84,6 @@ public class MarshmallowMonster
 		description += " And my bloop existence is " + hasBloop; 
 		
 		return description;
+		//this brings up dialog. 
 	}
 }

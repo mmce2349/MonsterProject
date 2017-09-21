@@ -3,7 +3,7 @@ package monster.controller;
 import monster.model.MarshmallowMonster; 
 import java.util.Scanner;
 import monster.view.MonsterDisplay;
-
+//Retrieves certain things from other classes
 public class MonsterController 
 {
 	private MonsterDisplay popup;
@@ -13,7 +13,7 @@ public class MonsterController
 			popup = new MonsterDisplay ();
 		}
 	
-	public void start()
+	public void start()//where coding can begin
 	{
 			MarshmallowMonster sample = new MarshmallowMonster();
 //			System.out.println(sample);
@@ -29,10 +29,10 @@ public class MonsterController
 			popup.displayText(realMonster.toString());
 			
 			interactWithTheMonster(realMonster);
-			
+			//a series of text and statements followed about user prompting
 	}
 	
-	private void interactWithTheMonster(MarshmallowMonster currentMonster)
+	private void interactWithTheMonster(MarshmallowMonster currentMonster)// interaction
 
 	{
 //		System.out.println(currentMonster.getName() + " wants to know what to eat next");
@@ -40,7 +40,7 @@ public class MonsterController
 //		System.out.println(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
 		popup.displayText(currentMonster.getName() + " suggests arms, they have "+ currentMonster.getArmCount());
 //		System.out.println("How many do you want to eat?");
-		int specialAnswer = 0;
+		int specialAnswer = 0;//interaction through popup menus
 		String unconverted = popup.getResponse("How many do you want to eat?");
 		
 		if(isValidInteger(unconverted))
@@ -105,7 +105,7 @@ public class MonsterController
 			
 		}
 		
-		 popup.displayText("Hey look at me!!!");
+		 popup.displayText("Hey look at me!!!");//first popup display
 		String answer = popup.getResponse("How many meals are you eating today");
 		System.out.println(answer);
 		popup.displayText(answer);
@@ -160,4 +160,4 @@ private boolean isValidBoolean(String sampleBoolean)
 		}
 		return valid;
 	}
-}
+}//private booleans help prevent crashes from bad input. 
