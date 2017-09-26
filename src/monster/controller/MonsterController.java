@@ -15,13 +15,18 @@ public class MonsterController
 	
 	public void start()//where coding can begin
 	{
-			boolean finished = true;
-			int count = 0;
-			while(count < 100)
-			{
-				popup.displayText("I am so neat!");
-				count++;
-			}
+//			boolean finished = true;
+//			int count = 0;
+//			while(count < 100)
+//			{
+//				popup.displayText("I am so neat! " + count);
+//				count++;
+//			}
+		
+		for(int looper = 0; looper < 15; looper += 1)
+		{
+			popup.displayText("I am looping " + (looper + 1) + " times out of 15");
+		}
 		
 			MarshmallowMonster sample = new MarshmallowMonster();
 //			System.out.println(sample);
