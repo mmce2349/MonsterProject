@@ -62,7 +62,7 @@ public class MonsterController
 			unconverted = popup.getResponse("How many arms?????");
 		}
 		
-		if(isValidInteger(unconverted))
+		while(!isValidInteger(unconverted))
 		{
 			specialAnswer = Integer.parseInt(unconverted);
 		}
@@ -118,7 +118,7 @@ public class MonsterController
 		else if (consumed < currentMonster.getEyeCount()) 
 		{
 			currentMonster.setEyeCount(currentMonster.getEyeCount()- consumed);
-//			System.out.println("Awesome, Now I only have " + currentMonster.getEyeCount());
+			//System.out.println("Awesome, Now I only have " + currentMonster.getEyeCount());
 			popup.displayText("Awesome, Now I only have " + currentMonster.getEyeCount());
 			
 		}
