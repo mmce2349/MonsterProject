@@ -62,14 +62,24 @@ public class MonsterController
 			unconverted = popup.getResponse("How many arms?????");
 		}
 		
+//		if(isValidInteger(unconverted))
+//		{
+			specialAnswer = Integer.parseInt(unconverted);
+//		}
+//		specialAnswer= Integer.parseInt(unconverted);
 		while(!isValidInteger(unconverted))
 		{
-			specialAnswer = Integer.parseInt(unconverted);
+			popup.displayText("I am unsure of what I'm doing");
+			unconverted = popup.getResponse("how unsure?");
 		}
-		specialAnswer= Integer.parseInt(unconverted);
 		
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = 0;
+		String answerNumber = popup.getResponse("Q to ask");
+		while(!isValidDouble(answerNumber)) {
+			answerNumber = popup.getResponse("you must type in a double human!!!!");
+		}
+		double validNumber= Double.parseDouble(answerNumber);
 		consumed = specialAnswer;
 		if(consumed<0)
 		{
