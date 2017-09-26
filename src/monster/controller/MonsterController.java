@@ -23,10 +23,10 @@ public class MonsterController
 //				count++;
 //			}
 		
-		for(int looper = 0; looper < 15; looper += 1)
-		{
-			popup.displayText("I am looping " + (looper + 1) + " times out of 15");
-		}
+//		for(int looper = 0; looper < 15; looper += 1)
+//		{
+//			popup.displayText("I am looping " + (looper + 1) + " times out of 15");
+//		}
 		
 			MarshmallowMonster sample = new MarshmallowMonster();
 //			System.out.println(sample);
@@ -56,12 +56,17 @@ public class MonsterController
 		int specialAnswer = 0;//interaction through popup menus
 		String unconverted = popup.getResponse("How many do you want to eat?");
 		
+		while(!isValidInteger(unconverted))
+		{
+			popup.displayText("Try again!");
+			unconverted = popup.getResponse("How many arms?????");
+		}
+		
 		if(isValidInteger(unconverted))
 		{
 			specialAnswer = Integer.parseInt(unconverted);
 		}
 		specialAnswer= Integer.parseInt(unconverted);
-		
 		
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = 0;
