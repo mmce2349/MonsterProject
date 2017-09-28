@@ -59,6 +59,9 @@ public class MonsterController
 		{
 			MarshmallowMonster currentMonster = monsterList.get(index);
 			popup.displayText(currentMonster.getName());
+			String newName = popup.getResponse("What should my new name be??");
+			currentMonster.setName(newName);
+			popup.displayText(currentMonster.getName());
 		}
 	}
 	
