@@ -3,14 +3,19 @@ package monster.controller;
 import monster.model.MarshmallowMonster; 
 import java.util.Scanner;
 import monster.view.MonsterDisplay;
+import java.util.List;
+import java.util.ArrayList;
 //Retrieves certain things from other classes
+
 public class MonsterController 
 {
 	private MonsterDisplay popup;
+	private List<MarshmallowMonster> monsterList;
 	
 	public MonsterController ()
 		{
 			popup = new MonsterDisplay ();
+			monsterList = new ArrayList<MarshmallowMonster>();
 		}
 	
 	public void start()//where coding can begin
@@ -22,7 +27,7 @@ public class MonsterController
 //				popup.displayText("I am so neat! " + count);
 //				count++;
 //			}
-		
+//		
 //		for(int looper = 0; looper < 15; looper += 1)
 //		{
 //			popup.displayText("I am looping " + (looper + 1) + " times out of 15");
@@ -41,8 +46,20 @@ public class MonsterController
 //			System.out.println(realMonster);
 			popup.displayText(realMonster.toString());
 			
+			monsterList.add(realMonster);
+			monsterList.add(sample);
+			testList();
+			
 			interactWithTheMonster(realMonster);
 			//a series of text and statements followed about user prompting
+	}
+	private void testList()
+	{
+		for(int index = 0; index < monsterList.size(); index++)
+		{
+			MarshmallowMonster currentMonster = monsterList.get(index);
+			popup.displayText(currentMonster.getName());
+		}
 	}
 	
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)// interaction
