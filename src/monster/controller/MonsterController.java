@@ -63,6 +63,14 @@ public class MonsterController
 			currentMonster.setName(newName);
 			popup.displayText(currentMonster.getName());
 		}
+		
+		for(MarshmallowMonster current : monsterList)
+		{
+			popup.displayText(current.getName());
+			String newName = popup.getResponse("What should my new new name be?");
+			current.setName(newName);
+			popup.displayText(current.getName());
+		}
 	}
 	
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)// interaction
